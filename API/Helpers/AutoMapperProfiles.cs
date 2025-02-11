@@ -16,5 +16,6 @@ public AutoMapperProfiles()
    .ForMember(d=>d.PhotoUrl,o=>
    o.MapFrom(s=>s.photos.FirstOrDefault(x=>x.IsMain)!.Url));
    CreateMap<Photo,PhotoDto>(); 
+   CreateMap<MemberUpdateDto, AppUser>();
 }
 }

@@ -7,11 +7,12 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { createLinkedSignal } from '@angular/core/primitives/signals';
 import { RouteConfigLoadEnd } from '@angular/router';
+import { PhotoEditorComponent } from "../photo-editor/photo-editor.component";
 
 @Component({
   selector: 'app-member-edit',
   standalone:true,
-  imports: [TabsModule, FormsModule],
+  imports: [TabsModule, FormsModule, PhotoEditorComponent],
   templateUrl: './member-edit.component.html',
   styleUrl: './member-edit.component.css'
 })
@@ -44,7 +45,10 @@ export class MemberEditComponent implements OnInit{
         this.editForm?.reset(this.member);
       }
     })
-
+  }
+  onMemberChange(event:Member)
+  {
+    this.member=event;
   }
 
 }

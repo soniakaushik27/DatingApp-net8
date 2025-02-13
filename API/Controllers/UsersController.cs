@@ -50,6 +50,7 @@ IPhotoService photoService) : BaseApiController
             Url=result.SecureUrl.AbsoluteUri,
             PublicId=result.PublicId
         };
+        if(user.photos.Count==0) photo.IsMain=true;
         user.photos.Add(photo);
         if(await userRepository.SaveAllAsync()) return CreatedAtAction(nameof(GetUser),
         new {username=user.UserName},mapper.Map<PhotoDto>(photo));

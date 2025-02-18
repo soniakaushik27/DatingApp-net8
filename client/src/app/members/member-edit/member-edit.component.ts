@@ -5,14 +5,15 @@ import { MembersService } from '../../_services/members.service';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { createLinkedSignal } from '@angular/core/primitives/signals';
-import { RouteConfigLoadEnd } from '@angular/router';
+
 import { PhotoEditorComponent } from "../photo-editor/photo-editor.component";
+import { TimeagoModule } from 'ngx-timeago';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-member-edit',
   standalone:true,
-  imports: [TabsModule, FormsModule, PhotoEditorComponent],
+  imports: [TabsModule, FormsModule, PhotoEditorComponent,TimeagoModule,DatePipe],
   templateUrl: './member-edit.component.html',
   styleUrl: './member-edit.component.css'
 })

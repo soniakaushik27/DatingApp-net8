@@ -19,9 +19,7 @@ public string? LookingFor { get; set; }
 public required string City { get; set; }
 public required string Country { get; set; }
 public List<Photo> photos{get;set;}=[];
-// public int GetAge()
-// {
-//     return DateOfBirth.CalculateAge();
-// }
+public List<UserLike> LikedByUsers { get; set; } = [];
+public List<UserLike> LikedUsers { get; set; } = [];
 
 }
